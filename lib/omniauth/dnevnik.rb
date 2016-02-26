@@ -1,2 +1,2 @@
-require 'omniauth/clever/version'
-require 'omniauth/strategies/clever'
+require 'omniauth/dnevnik/version'
+require 'omniauth/strategies/dnevnik'
