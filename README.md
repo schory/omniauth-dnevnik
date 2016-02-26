@@ -6,7 +6,7 @@ Unofficial OmniAuth strategy for [Dnevnik SSO OAuth2](http://api.dnevnik.ru/#ÐÐ
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-dnevnik', '~> 1.0.1'
+    gem 'omniauth-dnevnik', '~> 1.0.1', :git => 'git://github.com/schory/omniauth-dnevnik.git'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 ## Usage
 
-OmniAuth Cnevnik is Rack Middleware in the OmniAuth convention. See the
+OmniAuth Dnevnik is Rack Middleware in the OmniAuth convention. See the
 [OmniAuth 1.0 docs](https://github.com/intridea/omniauth) for more information.
 
 Follow the Cnevnik OAuth docs to register your application, set callback URLs,
@@ -24,7 +24,7 @@ Example: In `config/initializers/omniauth.rb`, do:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :dnevnik, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET']
+  provider :dnevnik, ENV['DNEVNIK_KEY'], ENV['DNEVNIK_SECRET']
 end
 ```
 

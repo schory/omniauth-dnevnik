@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Omniauth::Dnevnik::VERSION
   gem.authors       = ["schory"]
   gem.description   = %q{Unofficial OmniAuth strategy for dnevnik.com SSO OAuth2 integration}
-  gem.summary       = %q{The unofficial strategy for authenticating people using dnevnik.com to your application using Clever's OAuth2 provider}
+  gem.summary       = %q{The unofficial strategy for authenticating people using dnevnik.com to your application using Dnevnik's OAuth2 provider}
   gem.homepage      = "https://github.com/schory/omniauth-dnevnik"
   gem.license       = 'MIT'
 
