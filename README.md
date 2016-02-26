@@ -6,7 +6,7 @@ Unofficial OmniAuth strategy for [Dnevnik SSO OAuth2](http://api.dnevnik.ru/#ÐÐ
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-dnevnik', '~> 1.1.0'
+    gem 'omniauth-dnevnik', '~> 1.0.0'
 
 And then execute:
 

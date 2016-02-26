@@ -7,10 +7,10 @@ Gem::Specification.new do |gem|
   gem.name          = "omniauth-dnevnik"
   gem.version       = Omniauth::Clever::VERSION
   gem.authors       = ["Carol Nichols"]
-  gem.email         = ["cnichols@thinkthroughmath.com"]
+  gem.email         = ["schory@gmail.com"]
   gem.description   = %q{Unofficial OmniAuth strategy for dnevnik.com SSO OAuth2 integration}
   gem.summary       = %q{The unofficial strategy for authenticating people using dnevnik.com to your application using Clever's OAuth2 provider}
-  gem.homepage      = "https://github.com/thinkthroughmath/omniauth-dnevnik"
+  gem.homepage      = "https://github.com/schory/omniauth-dnevnik"
   gem.license       = 'MIT'
 
   gem.signing_key   = ENV['GEM_PRIVATE_KEY']
