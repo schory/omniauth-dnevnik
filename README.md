@@ -6,7 +6,7 @@ Unofficial OmniAuth strategy for [Dnevnik SSO OAuth2](http://api.dnevnik.ru/#ÐÐ
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-dnevnik', '~> 1.0.0'
+    gem 'omniauth-dnevnik', '~> 1.0.1'
 
 And then execute:
 
@@ -14,10 +14,10 @@ And then execute:
 
 ## Usage
 
-OmniAuth Clever is Rack Middleware in the OmniAuth convention. See the
+OmniAuth Cnevnik is Rack Middleware in the OmniAuth convention. See the
 [OmniAuth 1.0 docs](https://github.com/intridea/omniauth) for more information.
 
-Follow the Clever OAuth docs to register your application, set callback URLs,
+Follow the Cnevnik OAuth docs to register your application, set callback URLs,
 and get a client ID and client secret.
 
 Example: In `config/initializers/omniauth.rb`, do:
@@ -59,10 +59,5 @@ MIT. See LICENSE.txt.
 
 ## Thank yous
 
-Thank you to the [Clever](https://github.com/Clever/) team for their awesome
-product and always being helpful with any issues. Thank you to [Think Through
-Math](https://github.com/thinkthroughmath) for dedicating time for the tech
-team to make open source contributions such as this.
-
-And, of course. thank you to [Omniauth](https://github.com/intridea/omniauth)
+Thank you to [Omniauth](https://github.com/intridea/omniauth)
 for making it so easy create this gem!
