@@ -1,1 +1,1 @@
-require "omniauth/clever"
+require "omniauth/dnevnik"

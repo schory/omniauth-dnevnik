@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'omniauth/clever/version'
+require 'omniauth/dnevnik/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "omniauth-clever"
+  gem.name          = "omniauth-dnevnik"
   gem.version       = Omniauth::Clever::VERSION
   gem.authors       = ["Carol Nichols"]
   gem.email         = ["cnichols@thinkthroughmath.com"]
-  gem.description   = %q{Unofficial OmniAuth strategy for clever.com SSO OAuth2 integration}
-  gem.summary       = %q{The unofficial strategy for authenticating people using clever.com to your application using Clever's OAuth2 provider}
-  gem.homepage      = "https://github.com/thinkthroughmath/omniauth-clever"
+  gem.description   = %q{Unofficial OmniAuth strategy for dnevnik.com SSO OAuth2 integration}
+  gem.summary       = %q{The unofficial strategy for authenticating people using dnevnik.com to your application using Clever's OAuth2 provider}
+  gem.homepage      = "https://github.com/thinkthroughmath/omniauth-dnevnik"
   gem.license       = 'MIT'
 
   gem.signing_key   = ENV['GEM_PRIVATE_KEY']

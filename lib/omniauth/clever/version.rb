@@ -1,5 +1,5 @@
 module Omniauth
-  module Clever
-    VERSION = "1.1.0"
+  module Dnevnik
+    VERSION = "1.0.0"
   end
 end

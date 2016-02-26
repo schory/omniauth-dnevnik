@@ -1,12 +1,12 @@
-# OmniAuth Clever
+# OmniAuth Dnevnik
 
-Unofficial OmniAuth strategy for [Clever SSO OAuth2](https://clever.com/developers/docs/oauth) integration.
+Unofficial OmniAuth strategy for [Dnevnik SSO OAuth2](http://api.dnevnik.ru/#Авторизация) integration.
 
 ## Installation
 
 Add the gem to your application's Gemfile:
 
-    gem 'omniauth-clever', '~> 1.1.0'
+    gem 'omniauth-dnevnik', '~> 1.1.0'
 
 And then execute:
 
@@ -24,22 +24,22 @@ Example: In `config/initializers/omniauth.rb`, do:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :clever, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET']
+  provider :dnevnik, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET']
 end
 ```
 
 ## Configuring
 
-To be able to set the optional `clever_landing` or `dev` parameters on a
-per-request basis by passing these params to your `/auth/clever` url, use
+To be able to set the optional `dnevnik_landing` or `dev` parameters on a
+per-request basis by passing these params to your `/auth/dnevnik` url, use
 this in the initializer instead:
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :clever, ENV['CLEVER_CLIENT_ID'], ENV['CLEVER_CLIENT_SECRET'],
+  provider :dnevnik, ENV['DNEVNIK_KEY'], ENV['DNEVNIK_SECRET'],
            :setup => lambda { |env|
              params = Rack::Utils.parse_query(env['QUERY_STRING'])
-             env['omniauth.strategy'].options[:client_options][:clever_landing] = params['clever_landing']
+             env['omniauth.strategy'].options[:client_options][:dnevnik_landing] = params['dnevnik_landing']
              env['omniauth.strategy'].options[:client_options][:dev] = params['dev']
            }
 end

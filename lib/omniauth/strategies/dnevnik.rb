@@ -3,19 +3,19 @@ require 'base64'
 
 module OmniAuth
   module Strategies
-    class Clever < OmniAuth::Strategies::OAuth2
-      option :name, "clever"
+    class Dnevnik < OmniAuth::Strategies::OAuth2
+      option :name, "dnevnik"
 
       option :client_options, {
-        :site          => 'https://api.clever.com',
-        :authorize_url => 'https://account.clever.com/oauth/authorize',
-        :token_url     => 'https://api.clever.com/oauth/token'
+        :site          => 'https://api.dnevnik.com',
+        :authorize_url => 'https://account.dnevnik.com/oauth/authorize',
+        :token_url     => 'https://api.dnevnik.com/oauth/token'
       }
 
       def authorize_params
         super.tap do |params|
           params[:scope] = 'read_only'
-          params[:clever_landing] = options.client_options.clever_landing || 'admin'
+          params[:dnevnik_landing] = options.client_options.dnevnik_landing || 'admin'
           if options.client_options.dev
             params[:dev] = options.client_options.dev
           end
