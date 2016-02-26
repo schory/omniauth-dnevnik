@@ -5,7 +5,7 @@ require 'omniauth/dnevnik/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "omniauth-dnevnik"
-  gem.version       = Omniauth::Clever::VERSION
+  gem.version       = Omniauth::Dnevnik::VERSION
   gem.authors       = ["Carol Nichols"]
   gem.email         = ["schory@gmail.com"]
   gem.description   = %q{Unofficial OmniAuth strategy for dnevnik.com SSO OAuth2 integration}
