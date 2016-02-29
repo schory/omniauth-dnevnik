@@ -13,9 +13,9 @@ module OmniAuth
       }
 
       def authorize_params
+        puts ">>>>>>>>>>>>>>>>>>>> authorize_params: #{params}"
         super.tap do |params|
           params[:scope] = 'read_only'
-          params[:code] = '123'
           params[:dnevnik_landing] = options.client_options.dnevnik_landing || 'admin'
           if options.client_options.dev
             params[:dev] = options.client_options.dev
@@ -24,6 +24,7 @@ module OmniAuth
       end
 
       def token_params
+        puts ">>>>>>>>>>>>>>>>>>>> token_params: #{params}" 
         username_password = options.client_secret + ":"
         super.tap do |params|
           params[:headers] = {'Authorization' => "Basic #{Base64.encode64(username_password)}"}
