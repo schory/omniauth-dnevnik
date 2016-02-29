@@ -15,7 +15,7 @@ module OmniAuth
       def authorize_params
         super.tap do |params|
           puts ">>>>>>>>>>>>>>>>>>>> authorize_params: #{params}"
-          params[:scope] = 'fullname'
+          params[:scope] = 'avatar,fullname,birthday,age,roles,schools,edugroups,lessons,marks,eduworks,relatives,files,contacts,friends,groups,networks,events,wall,messages,emailaddress,sex,socialentitymembership'
           params[:dnevnik_landing] = options.client_options.dnevnik_landing || 'admin'
           if options.client_options.dev
             params[:dev] = options.client_options.dev
