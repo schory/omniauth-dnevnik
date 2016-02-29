@@ -8,8 +8,8 @@ module OmniAuth
 
       option :client_options, {
         :site          => 'https://api.staging.dnevnik.ru',
-        :authorize_url => 'https://account.staging.dnevnik.ru/oauth/authorize',
-        :token_url     => 'https://api.staging.dnevnik.ru/oauth/token'
+        :authorize_url => 'https://account.staging.dnevnik.ru/v1/oauth/authorize',
+        :token_url     => 'https://api.staging.dnevnik.ru/v1/oauth/token'
       }
 
       def authorize_params
