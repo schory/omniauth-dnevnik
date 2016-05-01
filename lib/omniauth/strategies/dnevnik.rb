@@ -16,17 +16,14 @@ module OmniAuth
         super.tap do |params|
           puts ">>>>>>>>>>>>>>>>>>>> authorize_params: #{params}"
           params[:scope] = 'avatar,fullname,birthday,age,roles,schools,edugroups,lessons,marks,eduworks,relatives,files,contacts,friends,groups,networks,events,wall,messages,emailaddress,sex,socialentitymembership'
-          params[:dnevnik_landing] = options.client_options.dnevnik_landing || 'admin'
-          if options.client_options.dev
-            params[:dev] = options.client_options.dev
-          end
+          params[:client_id] = options.client_id
         end
       end
 
       def token_params
         username_password = options.client_secret + ":"
         super.tap do |params|
-          puts ">>>>>>>>>>>>>>>>>>>> token_params: #{params}" 
+          puts ">>>>>>>>>>>>>>>>>>>> token_params: #{params}"
           params[:headers] = {'Authorization' => "Basic #{Base64.encode64(username_password)}"}
         end
       end
@@ -50,4 +47,11 @@ module OmniAuth
       end
     end
   end
+end
+
+
+# Registers a response parser to convert Dnevnik's camelCase response to underscore:
+OAuth2::Response.register_parser(:camelcase_json, 'application/json') do |body|
+  j = MultiJson.load(body)
+  j.keys.map(&:underscore).zip(j.values).to_h
 end
