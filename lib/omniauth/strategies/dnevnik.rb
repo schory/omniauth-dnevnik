@@ -19,36 +19,17 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          puts ">>>>>>>>>>>>>>>>>>>> authorize_params: #{params}"
           params[:scope] = 'avatar,fullname,birthday,age,roles,schools,edugroups,lessons,marks,eduworks,relatives,files,contacts,friends,groups,networks,events,wall,messages,emailaddress,sex,socialentitymembership'
           params[:client_id] = options.client_id
         end
       end
 
-      def token_params
-        username_password = options.client_secret + ":"
-        super.tap do |params|
-          puts ">>>>>>>>>>>>>>>>>>>> token_params: #{params}"
-          params[:headers] = {'Authorization' => "Basic #{Base64.encode64(username_password)}"}
-        end
-      end
+      uid{ raw_info['id'] }
 
-
-
-      uid{ raw_info['data']['id'] }
-
-      info do
-        { :user_type => raw_info['type'] }.merge! raw_info['data']
-      end
-
-      extra do
-        {
-          'raw_info' => raw_info
-        }
-      end
+      info { raw_info }
 
       def raw_info
-        @raw_info ||= access_token.get('/me').parsed
+        @raw_info ||= access_token.get('/v1/users/me').parsed
       end
     end
   end
