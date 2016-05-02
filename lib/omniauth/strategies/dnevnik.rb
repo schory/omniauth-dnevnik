@@ -12,6 +12,11 @@ module OmniAuth
         :token_url     => 'https://api.staging.dnevnik.ru/v1/authorizations'
       }
 
+      # Use access token as a URL param, as specified in the Dnevnik API docs
+      option :auth_token_params, {
+        :mode          => :query
+      }
+
       def authorize_params
         super.tap do |params|
           puts ">>>>>>>>>>>>>>>>>>>> authorize_params: #{params}"
